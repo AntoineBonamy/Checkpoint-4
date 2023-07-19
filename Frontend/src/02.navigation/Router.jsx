@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import HomePage from "../03.globals/01.Pages/HomePage";
-
+import Garage from "../03.globals/01.Pages/Garage";
+import Ship from "../03.globals/01.Pages/Ship";
 
 function Router() {
     return (
         <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<Garage />} />
+            <Route path="/ship/:id" element={<Ship />} />
         </Routes>
     )
 }
