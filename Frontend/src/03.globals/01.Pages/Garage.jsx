@@ -26,7 +26,7 @@ const Garage = () => {
             </div>
             <NavLink to="/parking">
                 <div className="flex justify-center">
-                <button className="text-white text-3xl pb-8" type="button">Se Garer avec son propre vaisseau</button>
+                <button className="rounded-full text-white bg-slate-700 px-5 py-3 hover:scale-110 text-3xl mb-5" type="button">Se Garer avec son propre vaisseau</button>
                 </div>
             </NavLink>
             </div>

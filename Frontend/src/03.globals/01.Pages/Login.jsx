@@ -20,17 +20,17 @@ const Login = () => {
 
 
     return <div className="bg-mainBg h-screen">
-        <div className="flex justify-center items-center p-10">
+        <div className="flex justify-center items-center p-10 text-white">
         <div className="bg-slate-500/50 rounded-3xl p-10">
             <h1 className="text-4xl font-bold text-center">Bienvenue dans la station Atomic !</h1>
             <br />
             <form className="text-2xl" onSubmit={handleLogin}>
                 <label className="block" htmlFor="email">Email</label>
-                <input className="text-xl w-full p-2 rounded-full" id="email" type="email" onChange={(e) => setEmail(e.target.value)} />
+                <input className="text-xl text-black w-full p-2 rounded-full" required id="email" type="email" onChange={(e) => setEmail(e.target.value)} />
                 <br />
                 <br />
                 <label className="block" htmlFor="password"> Mot de passe</label>
-                <input className="text-xl w-full p-2 rounded-full" type="password" onChange={(e) => setPassword(e.target.value)} />
+                <input className="text-xl text-black w-full p-2 rounded-full" id="password" required type="password" onChange={(e) => setPassword(e.target.value)} />
                 <br />
                 <br />
                 <div className="flex justify-center">

@@ -8,7 +8,7 @@ const Card = ({ id, name, description, lightspeed, state, skin }) => {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="bg-gradient-to-r from-sky-800 to-indigo-950 rounded-3xl p-8 pb-2 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)]">
+      <div className="bg-gradient-to-r from-sky-800/75 to-indigo-950/75 text-white rounded-3xl p-8 pb-2 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)]">
         <div className="flex flex-wrap justify-center items-center">
           <h1 className="font-bold text-xl">{name}</h1>
         </div>
