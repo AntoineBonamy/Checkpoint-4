@@ -6,10 +6,13 @@ const Navbar = () => {
         <div className="w-full bg-navbarBg bg-no-repeat bg-cover bg-center border-b-4 border-amber-500">
             <div className="">
             <ul className="flex justify-end gap-10 p-6 pr-10 text-white">
-                <NavLink to="/">
+                <NavLink to="/garage">
                 <li>Accueil</li>
                 </NavLink>
-                <NavLink>
+                <NavLink to="/parking">
+                    <li>Parking</li>
+                </NavLink>
+                <NavLink to="/">
                 <li>Partir</li>
                 </NavLink>
             </ul>

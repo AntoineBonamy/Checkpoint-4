@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../03.Components/Navbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -7,6 +7,8 @@ const Ship = () => {
   const { id } = useParams();
   const [data, setData] = useState();
   const [onEdit, setOnEdit] = useState(false);
+
+  const navigate = useNavigate();
 
   // State du update
   const [name, setName] = useState("");
@@ -27,11 +29,13 @@ const Ship = () => {
         setLightspeed(res[0].lightspeed);
       })
       .catch((err) => console.error("Erreur au get by id : ", err));
-  }, []);
+  }, [onEdit]);
 
   const handleUpdate = () => {
     setOnEdit(true);
   };
+
+  console.log(lightspeed);
 
   const handleValidateUpdate = () => {
     parseInt(lightspeed, 10);
@@ -51,7 +55,15 @@ const Ship = () => {
     setOnEdit(false);
   };
 
-  const handleDelete = () => {};
+  const handleDelete = () => {
+    axios
+        .delete(`http://localhost:5026/api/spaceship/delete/${id}`)
+        .then((res) => {
+            console.log("Success deleting the ship", res)
+            navigate("/")
+        })
+        .catch((err) => console.error("Error deleting the ship", err))
+  };
 
   return (
     <div>
@@ -150,7 +162,7 @@ const Ship = () => {
         <div className="flex justify-center gap-10 mb-5">
           {onEdit ? (
             <button
-              onClick={handleValidateUpdate}
+              onClick={() => {handleValidateUpdate()}}
               className="rounded-full text-white bg-slate-700 pt-2 pb-2 pl-5 pr-5 hover:scale-110"
             >
               Sauvegarder
@@ -164,7 +176,7 @@ const Ship = () => {
             </button>
           )}
 
-          <button className="rounded-full text-white bg-slate-700 pt-2 pb-2 pl-5 pr-5 hover:scale-110">
+          <button onClick={() => handleDelete()} className="rounded-full text-white bg-slate-700 pt-2 pb-2 pl-5 pr-5 hover:scale-110">
             Supprimer
           </button>
         </div>

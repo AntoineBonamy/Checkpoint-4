@@ -8,7 +8,8 @@ export default {
     extend: {
       backgroundImage: {
         mainBg: "url(./src/01.assets/img/wallpaper.jpg)",
-        navbarBg: "url(./src/01.assets/img/navbar.jpg)"
+        navbarBg: "url(./src/01.assets/img/navbar.jpg)",
+        parkingBg: "url(./src/01.assets/img/parking-wallpaper.jpg)"
       }
     },
   },
