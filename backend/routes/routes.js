@@ -3,6 +3,13 @@ const express = require("express");
 const router = express.Router();
 
 const spaceshipController = require("../controller/spaceship.controller");
+const userController = require("../controller/user.controller");
+
+// Login
+
+router.post("/api/login", userController.getUserByEmail);
+
+// CRUD spaceship
 
 router.get("/api/spaceship", spaceshipController.getShips);
 router.get("/api/spaceship/:id", spaceshipController.getShipsById);
