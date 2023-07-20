@@ -66,7 +66,8 @@ const Ship = () => {
   return (
     <div>
       <Navbar />
-      <div className="bg-mainBg bg-cover bg-no-repeat text-white flex flex-wrap justify-center items-center gap-10 pt-10 pb-10">
+      <div className="bg-mainBg bg-cover bg-no-repeat text-white flex flex-wrap justify-center items-center flex-col gap-10 pt-10 pb-10">
+        
         <div>
           {onEdit ? (
             <div className="h-full w-full m-10 flex justify-center">

@@ -4,15 +4,16 @@ import Ship from "../03.globals/01.Pages/Ship";
 import Parking from "../03.globals/01.Pages/Parking";
 import Login from "../03.globals/01.Pages/Login";
 import LandingPage from "../03.globals/01.Pages/LandingPage";
+import Protected from "./Protected";
 
 function Router() {
     return (
         <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/garage" element={<Garage />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/ship/:id" element={<Ship />} />
-            <Route path="/parking" element={<Parking />} />
+            <Route path="/garage" element={<Protected> <Garage /></Protected>} />
+            <Route path="/ship/:id" element={<Protected><Ship /></Protected>} />
+            <Route path="/parking" element={<Protected><Parking /></Protected>} />
         </Routes>
     )
 }

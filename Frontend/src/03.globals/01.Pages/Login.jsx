@@ -12,6 +12,8 @@ const Login = () => {
         e.preventDefault()
         axios.post("http://localhost:5026/api/login", {email, password})
         .then(() => {
+            const user = {email: email, password: password};
+            localStorage.setItem("user", user);
             navigate("/garage")
         })
         .catch((err) => console.error("Erreur de connexion", err))

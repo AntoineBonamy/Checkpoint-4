@@ -2,6 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const handleLogOut = () => {
+        localStorage.clear();
+    }
+
     return (
         <div className="w-full bg-navbarBg bg-no-repeat bg-cover bg-center border-b-4 border-amber-500">
             <div className="">
@@ -12,7 +17,7 @@ const Navbar = () => {
                 <NavLink to="/parking">
                     <li>Parking</li>
                 </NavLink>
-                <NavLink to="/">
+                <NavLink to="/" onClick={handleLogOut}>
                 <li>Partir</li>
                 </NavLink>
             </ul>
