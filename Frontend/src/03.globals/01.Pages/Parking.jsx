@@ -55,19 +55,19 @@ const Parking = () => {
         <div className="bg-slate-500/50 rounded-lg p-5">
         <form className="text-2xl" action="" onSubmit={handlePark}>
             <label className="block" htmlFor="name">Quel est le modèle de votre vaisseau ?</label>
-            <input id="name" className="text-black rounded-full text-xl px-2 py-1" type="text" onChange={(e) => setName(e.target.value)} />
+            <input id="name" className="text-black rounded-full text-xl px-2 py-1" placeholder="TARDIS" type="text" onChange={(e) => setName(e.target.value)} />
             <br />
             <br />
             <label className="block" htmlFor="state">Dans quel état est-il ?</label>
-            <input id="state" className="text-black rounded-full text-xl px-2 py-1" type="text" onChange={(e) => setState(e.target.value)} />
+            <input id="state" className="text-black rounded-full text-xl px-2 py-1" placeholder="Parfait état" type="text" onChange={(e) => setState(e.target.value)} />
             <br />
             <br />
             <label className="block" htmlFor="description">Pouvez-vos nous donner un rapide descriptif de votre engin ?</label>
-            <input id="description" className="text-black rounded-full text-xl px-2 py-1" type="text"  onChange={(e) => setDescription(e.target.value)}/>
+            <input id="description" className="text-black rounded-full text-xl px-2 py-1" placeholder="C'est plus grand à l'intérieur" type="text"  onChange={(e) => setDescription(e.target.value)}/>
             <br />
             <br />
             <label className="block" htmlFor="lightspeed">Peut-il voyager à la vitesse de la lumière ?</label>
-            <select className="text-black" name="" id="lightspeed" onChange={(e) => setLightspeed(e.target.value)}>
+            <select className="text-black text-lg px-2 py-1 rounded-full" name="" id="lightspeed" onChange={(e) => setLightspeed(e.target.value)}>
                 <option value="0">Non</option>
                 <option value="1">Oui</option>
             </select>

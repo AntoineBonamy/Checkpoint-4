@@ -18,6 +18,21 @@ const getUserByEmail = (req, res) => {
         })
 }
 
+const registerUser = (req, res) => {
+    const {name, email, password} = req.body;
+
+    database
+        .query("INSERT INTO user(name, email, password) VALUES (?,?,?)", [name, email, password])
+        .then(([user]) => {
+            res.status(201).location(`api/user/${user.insertId}`).send("Success")
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send("Error register the user")
+        });
+}
+
 module.exports = {
-    getUserByEmail
+    getUserByEmail,
+    registerUser
 }

@@ -13,6 +13,10 @@ const uploadController = require("../controller/upload.controller");
 
 router.post("/api/login", userController.getUserByEmail);
 
+// Register
+
+router.post("/api/register", userController.registerUser);
+
 // CRUD spaceship
 
 router.get("/api/spaceship", spaceshipController.getShips);
